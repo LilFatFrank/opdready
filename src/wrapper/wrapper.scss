@@ -18,8 +18,10 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-  .mobile {
+.mobile {
+  display: none;
+  @media screen and (min-width: 320px) and (max-width: 1024px) {
+    display: block;
     height: 100%;
     width: 100%;
     padding: toRem(30);
