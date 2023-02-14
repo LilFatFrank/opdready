@@ -11,6 +11,8 @@
     height: toRem(120);
   }
   .page-content {
+    width: inherit;
+    height: inherit;
     padding: toRem(60);
   }
   @media screen and (min-width: 320px) and (max-width: 1024px) {

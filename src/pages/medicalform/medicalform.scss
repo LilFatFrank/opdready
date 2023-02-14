@@ -1,0 +1,13 @@
+@import '../../style/mixins.scss';
+@import '../../style/functions.scss';
+
+.medical-form {
+  width: 100%;
+  height: 100%;
+  .not-connected {
+    @include flex(column, center, center, toRem(30));
+    .not-connected-title {
+      @include typography(GilroySemiBold, toRem(48), 130%, var(--black));
+    }
+  }
+}

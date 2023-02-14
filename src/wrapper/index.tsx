@@ -1,4 +1,4 @@
-import Routes from '../components/routes'
+import Routes from '../routes'
 import Footer from './footer'
 import Header from './header'
 import './wrapper.scss'

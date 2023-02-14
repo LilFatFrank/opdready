@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components'
 import './landing.scss'
 
 const Landing = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="landing">
       <div className="main-section">
@@ -13,7 +16,7 @@ const Landing = () => {
             OpdReady helps you avail your medical history online so that you can
             avoid carrying files on your next doctor's appointment.
           </p>
-          <Button>Get Started</Button>
+          <Button onClick={() => navigate('/medicalform')}>Get Started</Button>
         </div>
         <img
           src="/assets/images/opdready-landingimage.png"
