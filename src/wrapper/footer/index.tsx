@@ -27,6 +27,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <a
+        className="copyright-text"
+        href="https://mumbai.polygonscan.com/address/0xc904c95d0cbf50342fd92c8ab4764819f5641808"
+        target={'_blank'}
+        rel="noreferrer noopener"
+      >
+        View Contract
+      </a>
       <p className="copyright-text">© 2023 OpdReady</p>
     </div>
   )
