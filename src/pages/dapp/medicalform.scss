@@ -14,7 +14,7 @@
     &-title {
       @include typography(GilroyRegular, toRem(24), 130%, var(--black));
       padding-bottom: toRem(10);
-      border-bottom: toRem(1) solid var(--footer-botder);
+      border-bottom: toRem(1) solid var(--footer-border);
       width: 100%;
     }
     &-fields {
@@ -37,7 +37,7 @@
             var(--light-text)
           );
           border-radius: toRem(8);
-          border: toRem(1) solid var(--footer-botder);
+          border: toRem(1) solid var(--footer-border);
           outline: none;
         }
       }

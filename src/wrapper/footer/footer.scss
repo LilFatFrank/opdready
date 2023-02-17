@@ -3,7 +3,7 @@
 
 .footer {
   width: 100%;
-  border-top: toRem(1) solid var(--footer-botder);
+  border-top: toRem(1) solid var(--footer-border);
   padding: toRem(60);
   @include flex(column, flex-start, center, toRem(30));
   position: sticky;

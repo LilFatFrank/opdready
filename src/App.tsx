@@ -14,7 +14,7 @@ function App() {
   const { chains, provider, webSocketProvider } = configureChains(
     [polygonMumbai],
     [
-      infuraProvider({ apiKey: process.env.REACT_APP_INFURA_ID!, priority: 0 }),
+      infuraProvider({ apiKey: '01377e1e58094354aac3e16a311b71cc', priority: 0 }),
       publicProvider({ priority: 1 }),
     ],
   )

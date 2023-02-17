@@ -67,9 +67,9 @@ const Landing = () => {
           <div className="how-it-works-section-col-2">
             <h3 className="how-it-works-col-2-title">Pay gas</h3>
             <p className="how-it-works-col-2-desc">
-              You will be asked to pay some gas to store your IPNS name. The
-              IPNS name is created by us and then stored on the smart contract
-              on the mumbai network against your address. The same name is used
+              You will be asked to pay some gas to store your IPNS key. The
+              IPNS key is created by us and then stored on the smart contract
+              on the mumbai network against your address. The same key is used
               to retrieve the details of the user that are stored on IPFS. This
               is a one time payment.
             </p>
@@ -100,7 +100,7 @@ const Landing = () => {
               On submission, the details are stored as a metadata file for the
               user on the IPFS network. The same details are retrieved back when
               the user reconnects the wallet. You can also edit the information
-              and save it. The IPNS name is already stored against your address
+              and save it. The IPNS key is already stored against your address
               and will act as nothing but a simple pointer to your metadata. The
               new IPFS hash generated is stored against it.
             </p>

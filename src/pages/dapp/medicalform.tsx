@@ -1,13 +1,14 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { Button } from '../../components'
 import { MedicalFormData, rem } from '../../utils'
 import './medicalform.scss'
 
 interface MedicalFormProps {
     onSubmit: (val: MedicalFormData) => void
+    prefilledFormData: MedicalFormData
 }
 
-const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
+const MedicalForm = ({ onSubmit, prefilledFormData }: MedicalFormProps) => {
   const [formData, setFormData] = useState<MedicalFormData>({
     firstName: '',
     lastName: '',
@@ -36,6 +37,10 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
     onSubmit(formData)
   }
 
+  useEffect(() => {
+    if (prefilledFormData) setFormData(prefilledFormData)
+  }, [prefilledFormData])
+
   return (
     <form onSubmit={onFormSubmit}>
       <div className="medical-form-container">
@@ -50,6 +55,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'firstName'}
+                value={formData.firstName}
                 onChange={addFormData}
               />
             </div>
@@ -60,6 +66,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'lastName'}
+                value={formData.lastName}
                 onChange={addFormData}
               />
             </div>
@@ -70,6 +77,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'contact'}
+                value={formData.contact}
                 onChange={addFormData}
               />
             </div>
@@ -82,6 +90,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'sex'}
+                value={formData.sex}
                 onChange={addFormData}
               />
             </div>
@@ -92,6 +101,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'age'}
+                value={formData.age}
                 onChange={addFormData}
               />
             </div>
@@ -104,6 +114,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'bloodGroup'}
+                value={formData.bloodGroup}
                 onChange={addFormData}
               />
             </div>
@@ -114,6 +125,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'height'}
+                value={formData.height}
                 onChange={addFormData}
               />
             </div>
@@ -124,6 +136,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'weight'}
+                value={formData.weight}
                 onChange={addFormData}
               />
             </div>
@@ -139,6 +152,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'lifestyle'}
+                value={formData.lifestyle}
                 onChange={addFormData}
               />
             </div>
@@ -151,6 +165,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'alcohol'}
+                value={formData.alcohol}
                 onChange={addFormData}
               />
             </div>
@@ -161,6 +176,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'smoking'}
+                value={formData.smoking}
                 onChange={addFormData}
               />
             </div>
@@ -171,6 +187,7 @@ const MedicalForm = ({ onSubmit }: MedicalFormProps) => {
                 type={'text'}
                 className={'input-container-input'}
                 name={'allergies'}
+                value={formData.allergies}
                 onChange={addFormData}
               />
             </div>
