@@ -10,13 +10,17 @@ const Landing = () => {
       <div className="main-section">
         <div className="main-section-col-1">
           <h1 className="main-section-col-1-title">
-            Store your medical history securely.
+            Store your medical history{' '}
+            <span style={{ color: 'var(--primary)', fontFamily: 'inherit' }}>
+              securely
+            </span>
+            .
           </h1>
           <p className="main-section-col-1-desc">
             OpdReady helps you avail your medical history online so that you can
             avoid carrying files on your next doctor's appointment.
           </p>
-          <Button onClick={() => navigate('/medicalform')}>Get Started</Button>
+          <Button onClick={() => navigate('/dapp')}>Get Started</Button>
         </div>
         <img
           src="/assets/images/opdready-landingimage.png"
@@ -63,11 +67,11 @@ const Landing = () => {
           <div className="how-it-works-section-col-2">
             <h3 className="how-it-works-col-2-title">Pay gas</h3>
             <p className="how-it-works-col-2-desc">
-              You will be asked to pay some gas to create your IPNS name. The
-              IPNS name is then stored on the smart contract on the mumbai
-              network against your address. The same name is used to retrieve
-              the details of the user that are stored on IPFS. This is a one
-              time payment.
+              You will be asked to pay some gas to store your IPNS name. The
+              IPNS name is created by us and then stored on the smart contract
+              on the mumbai network against your address. The same name is used
+              to retrieve the details of the user that are stored on IPFS. This
+              is a one time payment.
             </p>
           </div>
         </div>

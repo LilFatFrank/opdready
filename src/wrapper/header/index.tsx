@@ -1,9 +1,11 @@
 import { ConnectKitButton } from 'connectkit'
 import { useRef, useState } from 'react'
 import Jazzicon from 'react-jazzicon/dist/Jazzicon'
+import { Link, useLocation } from 'react-router-dom'
 import { useAccount, useBalance, useDisconnect } from 'wagmi'
 import { Button, Sprite } from '../../components'
 import { useOutsideAlerter } from '../../hooks'
+import { NAV_LINKS } from '../../utils/constants'
 import './header.scss'
 
 const Header = () => {
@@ -16,17 +18,27 @@ const Header = () => {
 
   const [showDropdown, setShowDropdown] = useState(false)
   const dropdownRef = useRef(null)
+  const location = useLocation()
 
   useOutsideAlerter(dropdownRef, () => setShowDropdown(false))
 
   return (
     <div className="header">
-      <img
-        src="/assets/svgs/opdready-icon.svg"
-        alt="opdready-icon"
-        width={70}
-        height={70}
-      />
+      <div className="logo-area">
+        <img
+          src="/assets/svgs/opdready-icon.svg"
+          alt="opdready-icon"
+          width={70}
+          height={70}
+        />
+        <div className="links">
+          {NAV_LINKS.map((link) => (
+            <Link key={link.label} to={`${link.link}`} className={`link ${link.link === location.pathname ? 'active' : ''}`}>
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
       <div className="connect-button-dropdown" ref={dropdownRef}>
         {isConnected ? (
           <div className="wallet-dropdown-button">

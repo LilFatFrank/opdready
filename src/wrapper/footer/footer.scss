@@ -6,6 +6,8 @@
   border-top: toRem(1) solid var(--footer-botder);
   padding: toRem(60);
   @include flex(column, flex-start, center, toRem(30));
+  position: sticky;
+  top: 100%;
   .footer-row-1 {
     width: 100%;
     @include flex(row, center, space-between, '');

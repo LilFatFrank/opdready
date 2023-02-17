@@ -9,4 +9,10 @@
   border: none;
   cursor: pointer;
   box-shadow: 0px 8px 8px var(--box-shadow-color);
+  &.alternate {
+    background: var(--full-white);
+    border-radius: toRem(8);
+    border: toRem(1) solid var(--primary);
+    color: var(--primary);
+  }
 }

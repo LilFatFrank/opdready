@@ -1,2 +1,2 @@
 export { default as Landing } from './landing'
-export { default as MedicalForm } from './medicalform'
+export { default as Dapp } from './dapp'

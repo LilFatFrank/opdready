@@ -4,12 +4,15 @@ export const rem = (px: number | string) => {
     : `${parseInt(px.split('px')[0]) / 16}rem`
 }
 
-export function formatNumberSuffix(amount: number) {
-  if (amount === 0) return 0
-  const abbreviations = ['', 'K', 'M', 'B', 'T']
-  const abbreviationIndex = Math.floor(Math.log10(amount) / 3)
-  return (
-    (amount / Math.pow(10, abbreviationIndex * 3)).toFixed(1) +
-    abbreviations[abbreviationIndex]
-  )
+export function uint8ArrayToString(uint8Array: Uint8Array) {
+  const decoder = new TextDecoder('utf-8');
+  return decoder.decode(uint8Array);
 }
+
+export function stringToUint8Array(str: string) {
+  const encoder = new TextEncoder();
+  return encoder.encode(str);
+}
+
+export * from './constants'
+export * from './interfaces'

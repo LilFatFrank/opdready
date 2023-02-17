@@ -11,6 +11,20 @@
   backdrop-filter: blur(toRem(32));
   @include flex(row, center, space-between, '');
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.02);
+  .logo-area {
+    @include flex(row, center, '', toRem(36));
+    .links {
+      @include flex(row, center, '', toRem(30));
+      .link {
+        text-decoration: none;
+        text-transform: capitalize;
+        @include typography(GilroyMedium, toRem(18), 130%, var(--light-text));
+        &.active {
+          color: var(--black);
+        }
+      }
+    }
+  }
   .connect-button-dropdown {
     position: relative;
     .wallet-dropdown-button {
