@@ -17,6 +17,7 @@ The solution is to create a website that stores all this information and more. T
 ## Immediate updates for the app would be
 * Enable uploading and deleting files (blood reports, scans, etc).
 * Store the data securely (with proper encryption). The IPNS key bytes are currently stored as they are.
+* Add an authorization functionality where only the authorized blockchain addresses can view your medical information as such sensitive information can not be open.
 * Work on a way to provide web2 login or something like farcaster, that way the user can create their profile without having a wallet.
 
 ## Under the hood
