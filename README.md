@@ -14,15 +14,20 @@ OpdReady focuses on the following problems:
 
 The solution is to create a website that stores all this information and more. To be able to store past surgeries, current medication, immunizations, also family medical history. The end vision of the product is to be able to make this information available with a simple scan within a second.
 
+## Immediate updates for the app would be
+* Enable uploading and deleting files (blood reports, scans, etc).
+* Store the data securely (with proper encryption). The IPNS key bytes are currently stored as they are.
+* Work on a way to provide web2 login or something like farcaster, that way the user can create their profile without having a wallet.
+
 ## Under the hood
 
 For the purposes of MVP, the functionality of [Web3Storage](https://web3.storage/) is leveraged.
 In simple steps, this is how the app works:
 * On connecting the wallet, we ask the user to create a profile for which he has to pay gas.
-* The gas is used to store the IPNS key. IPNS will be a simple pointer to the user's metadata.
+* The gas is used to store the IPNS key. IPNS key will be a simple pointer to the user's metadata.
 * The [contract](https://mumbai.polygonscan.com/address/0xc904c95d0cbf50342fd92c8ab4764819f5641808) is deployed on the Polygon Mumbai Network.
 * The user's metadata is simply a json file stored on IPFS.
-* IPFS hash is generated based on the contents on the file. So, everytime the user adds or updates some information, the hash is changed which makes it difficult to track it.
+* IPFS hash is generated based on the contents of the file. So, everytime the user adds or updates some information, the hash is changed which makes it difficult to track it.
 * To combat that, the IPNS key is stored against the user's address on the contract and everytime the IPFS hash is updated it is published against the IPNS key.
 * Packages: [web3.storage](https://www.npmjs.com/package/web3.storage), [w3name](https://www.npmjs.com/package/w3name)
 
